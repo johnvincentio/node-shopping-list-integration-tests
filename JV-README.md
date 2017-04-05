@@ -46,6 +46,7 @@ https://travis-ci.org/
 	* Settings, Integrations & services (left menu)
 	* Add a Service (mid-right)
 		* Select Travis CI from dropdown
+		* Do not add User, Token, Domain
 		* Add service(green button at bottom)
 	* From Travis CI, click on <username>(top right)
 		* Lists github projects
