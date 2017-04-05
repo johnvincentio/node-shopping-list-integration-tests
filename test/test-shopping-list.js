@@ -1,3 +1,10 @@
+
+/* jshint node: true */
+/* jshint esnext: true */
+/* global describe, it, before, after */
+
+'use strict';
+
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
@@ -8,8 +15,7 @@ const {app, runServer, closeServer} = require('../server');
 // http://chaijs.com/api/bdd/
 const should = chai.should();
 
-// This let's us make HTTP requests
-// in our tests.
+// This let's us make HTTP requests in our tests.
 // see: https://github.com/chaijs/chai-http
 chai.use(chaiHttp);
 

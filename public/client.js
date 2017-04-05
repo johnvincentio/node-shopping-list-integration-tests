@@ -1,4 +1,6 @@
 
+/*jshint browser: true, jquery: true */
+
 var shoppingItemTemplate = (
   '<li class="js-shopping-item">' +
     '<p><span class="shopping-item js-shopping-item-name"></span></p>' +
@@ -34,7 +36,7 @@ var SHOPPING_LIST_URL = serverBase + 'shopping-list';
 
 
 function getAndDisplayRecipes() {
-  console.log('Retrieving recipes')
+  console.log('Retrieving recipes');
   $.getJSON(RECIPES_URL, function(recipes) {
     console.log('Rendering recipes');
     var recipesElement = recipes.map(function(recipe) {
@@ -47,7 +49,7 @@ function getAndDisplayRecipes() {
       });
       return element;
     });
-    $('.js-recipes').html(recipesElement)
+    $('.js-recipes').html(recipesElement);
   });
 }
 
@@ -58,13 +60,13 @@ function getAndDisplayShoppingList() {
     var itemElements = items.map(function(item) {
       var element = $(shoppingItemTemplate);
       element.attr('id', item.id);
-      var itemName = element.find('.js-shopping-item-name')
+      var itemName = element.find('.js-shopping-item-name');
       itemName.text(item.name);
       element.attr('data-checked', item.checked);
       if (item.checked) {
         itemName.addClass('shopping-item__checked');
       }
-      return element
+      return element;
     });
     $('.js-shopping-list').html(itemElements);
   });
@@ -135,7 +137,7 @@ function updateShoppingListitem(item) {
     method: 'PUT',
     data: JSON.stringify(item),
     success: function(data) {
-      getAndDisplayShoppingList()
+      getAndDisplayShoppingList();
     },
     dataType: 'json',
     contentType: 'application/json'
@@ -149,7 +151,7 @@ function handleRecipeAdd() {
     var ingredients = $(
       e.currentTarget).find(
       '#ingredients-list').val().split(',').map(
-        function(ingredient) { return ingredient.trim() });
+        function(ingredient) { return ingredient.trim(); });
     addRecipe({
       name: $(e.currentTarget).find('#recipe-name').val(),
       ingredients: ingredients
@@ -193,7 +195,7 @@ function handleShoppingCheckedToggle() {
       id: element.attr('id'),
       checked: !JSON.parse(element.attr('data-checked')),
       name: element.find('.js-shopping-item-name').text()
-    }
+    };
     updateShoppingListitem(item);
   });
 }
