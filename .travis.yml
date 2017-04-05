@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: MEpftC5ZfBJk31uVan12T97y17p9+eOwRcpiCupcDFXrynP20A8YO79ldiKptjKdbQoOaTA2nW0nqiqJayCyweMrhZ+mHoRxgFYqaCLzwZ+frAGgnRSWbHyn6Xo60xYZCjVzYH2jVEwyhwwSgf666bP2C/uU7eTm/815KoHP/5DA4CfDA3sy+dAwAxiOxvzxO6GdEQ8EXTzadjcRz3UakTkV2gZG3RZUE6+mngmPjs6a1w8Zszv7qu9N9TrNktkhjcL3LM3F5S0RYyXdbr7Qi/001MemTWMhlIAkilngrJknbXoTQRHYyYB9E4R3pskLX1R9sMle9ovHuvlUXRqba3+9DDscyjne4dUatfHbvPi1RhYYY8O7gjoBp9JOnt9STEKZKbyvQZP3f29j1MfRZMM740kR3xtG46oRmwRERxWFOf1XxRsVi9oLMV94boxN1Rdyrq33wTHncdiStdZgRxF2TF2msll4KtIRu/A/Jl60hHrTJ7BqHrlGPBVM0quIvooeV/m4wToh1t0Eua4k/FHL4s/xU/WoO8TlqDP/ZS4pw7fV6wLLS+urg4kIaVUlmAGwSG5N/pfOIb1PzP27nvNlVXa8WKi3J8+1bwF7LFvIDOFBK8gGBlaTSDeBjdH0s9FHsPciL3uqGfwxseeJovF7b2woSac4kKByK4B8Sug=
+  app: vast-sands-97674
+  on:
+    repo: johnvincentio/node-shopping-list-integration-tests

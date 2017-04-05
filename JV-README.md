@@ -81,10 +81,22 @@ Git .travis.yml to master
 * Push changes to master on GitHub, or merge a pull request into master, our tests automatically run.
 	* If our tests pass, TravisCI will deploy to Heroku. If our tests do not pass, it will not deploy.
 
-1. Install Travis CI command line interface
+1. Install or Update Travis CI command line interface
+```
+sudo gem install -n /usr/local/bin travis
+sudo gem install travis
+or update
+sudo gem update travis
+or
+sudo gem uninstall travis
+and then install
+```
+
+Note that 
 ```
 sudo gem install travis
 ```
+fails due to OSX security feature.
 
 2. Setup Travis to Deploy to Heroku
 Travis login requires my github login.
@@ -92,6 +104,11 @@ Travis login requires my github login.
 ```
 cd node-shopping-list-integration-tests
 travis login
+and provide github username & password
+
+or:
+have already setup SSH for github, thus
+travis login --auto-password
 ```
 
 To deploy to Heroku:
@@ -99,6 +116,7 @@ To deploy to Heroku:
 	* travis setup heroku
 		* "return" to the questions.
 	* git diff (see differences)
+		* note deploy block added to .travis.yml
  
 3. Create app on Heroku
 
@@ -108,19 +126,18 @@ heroku create
 
 Notice:
 
-	* App name: still-beyond-62965
-	* https://still-beyond-62965.herokuapp.com/
-	* https://git.heroku.com/still-beyond-62965.git
-
+	* App name: vast-sands-97674
+	* https://vast-sands-97674.herokuapp.com/
+	* https://git.heroku.com/vast-sands-97674.git
 
 Edit .travis.yml
 
 ```
 deploy:
-	app: still-beyond-62965
+	app: vast-sands-97674
 ```
 
-4. Git commit changes to master
+4. Git commit changes to master in github
 
 To run the app on Heroku:
 
