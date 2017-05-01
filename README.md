@@ -13,4 +13,4 @@ https://github.com/Thinkful-Ed/node-shopping-list-v5
 
 ## Notes
 
-[Travis CI Notes](https://johnvincent.io/blog/travisci/)
+[Travis CI Notes](https://johnvincent.io/travisci/)
